@@ -36,3 +36,11 @@ game = "26.3"
 file = "modularrouters.hmod"
 sha256 = "9f0852ff830e0c68bbec6644a639c20964a5eeb7126ee38cf79eeb95d3ce6756"
 changelog = "First release"
+
+[[versions]]
+version = "0.2.2"
+published = "2026-11-21"
+game = "26.3"
+file = "modularrouters.hmod"
+sha256 = "28892b6a3e074d0f1da71a633d9c3fec769706436f7cc9057c995411708debbc"
+changelog = """Slice 2, the carried recipes and the content/loot proof: the mod's whole crafting progression — blank module, router, puller and sender — plus the router's own drop. Both were dead in 26.3, and neither error was upstream's: the carried JSON was still in the 1.21.1 dialect. The recipes used the `{"item": …}` / `{"tag": …}` ingredient form, which 26.3 rejects, so the game logged `invalid ingredient` and every recipe returned nothing; the loot table used `"conditions": [ … ]`, while 26.3 wants a singular `"condition"`, so a broken router dropped nothing. Both are converted, and the port gains two fail-capable nets: `tools/data_shape.py` checks the dialect on the built package, and `tools/craft_check.py` crafts each recipe in a real table. Proven in game: the four recipes craft with their declared counts and consume their ingredients, two wrong-ingredient controls return nothing, the router drops itself, and the log has zero `invalid ingredient` lines."""

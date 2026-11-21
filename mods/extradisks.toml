@@ -38,3 +38,11 @@ game = "26.3"
 file = "extradisks.hmod"
 sha256 = "e47071a3c5ff8f0643330079ffb85810504d41a6a40e0adac8eff7b622b8334f"
 changelog = "First release"
+
+[[versions]]
+version = "0.2.1"
+published = "2026-11-21"
+game = "26.3"
+file = "extradisks.hmod"
+sha256 = "100a271e7879a3e3ab54e4090bb21c8f0e689d7f1ab6e62255dfc29eeed07a1a"
+changelog = """Slice 2, the block's own loot table, proven in game: a broken storage block now drops both itself and its contents' block item, where the carried table was in the 1.21.1 dialect and it dropped nothing. The pool is now the 26.3 shape — a singular `"condition": {"type": "minecraft:survives_explosion"}`, `"rolls": 1`, no `bonus_rolls` — matching vanilla's own block tables. The port also gains a data-shape check and closes a gap that had never run: readiness now reads `wait-ready`'s snapshot because `ctl screen` is null in `--headless` and `ctl state` carries no server block. Proven in game: a barrel beside the storage drops one and so does the storage, the inventory readout holds 1,048,640 of 1,048,576, and the unmodded game does not know the block. One tooling caveat is recorded with proof in the port: `fits` against another build reports this package as not fitting because the usage scanner records the `item` command argument's match arm as building the SDK `Item` field by field — the type is byte-identical in both builds' surfaces and the argument works in game. An aliased import does not help; the scanner resolves through the `use`. The same false positive will appear on any port with an `item` argument."""

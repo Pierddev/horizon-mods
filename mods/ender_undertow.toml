@@ -1,0 +1,25 @@
+id = "ender_undertow"
+kind = "datapack"
+name = "Ender Undertow"
+summary = "An Enderman behind an underground miner can lift them off the floor and blink them into a nearby cave."
+description = """
+In Overworld survival, mining stone or ore with an Enderman close behind you can trigger an eight-tick lift followed by a short teleport. Turning to face it or keeping a wall between you prevents the pickup.
+
+The pack looks for solid ground, headroom and an adjacent walkable space, then checks the destination again before arrival. If the original Enderman moves away, the carry ends. Each pickup starts a two-minute cooldown. Modpack authors can tune the default one-in-eight chance with a scoreboard setting.
+"""
+authors = ["Fnux8890"]
+owners = ["Fnux8890"]
+owner_ids = [21344589]
+license = "MIT"
+source = "https://github.com/Fnux8890/ender-undertow"
+icon = "icons/ender_undertow.png"
+categories = ["game-mechanics"]
+tags = ["enderman", "mining", "survival", "teleportation"]
+
+[[versions]]
+version = "0.1.1"
+published = "2026-11-20"
+game = "26.3"
+file = "ender-undertow-0.1.1.zip"
+sha256 = "f985e8a12fed1d527883796eab213d4b397d4d752180ed0f12a868cc6b08e8c7"
+changelog = "First public release. Checks Enderman identity, reach and cave landing safety."
